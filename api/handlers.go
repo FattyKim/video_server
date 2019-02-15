@@ -6,6 +6,11 @@ import (
 	"net/http"
 )
 
-func CreateUser(w http.ResponseWriter,h *http.Request,p httprouter.Params) {
+func CreateUser(w http.ResponseWriter, h *http.Request, p httprouter.Params) {
 	io.WriteString(w, "Create User Handler")
+}
+
+func Login(w http.ResponseWriter, h *http.Request, p httprouter.Params) {
+	uname := p.ByName("user_name")
+	io.WriteString(w, uname)
 }
